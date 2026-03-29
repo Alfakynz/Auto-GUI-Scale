@@ -1,0 +1,14 @@
+{
+	"required": true,
+	"package": "com.alfakynz.autoguiscale.mixin",
+	"compatibilityLevel": "JAVA_17",
+	"mixins": [
+		"GuiScaleMixin"
+	],
+	"injectors": {
+		"defaultRequire": 1
+	},
+	"overwrites": {
+		"requireAnnotations": true
+	}
+}
