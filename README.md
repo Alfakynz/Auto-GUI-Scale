@@ -38,6 +38,10 @@ If you have any questions, feel free to join the [Discord server](https://discor
 
 Nothing for now, but feel free to suggest any feature you want!
 
+## 🙏 Credits
+
+- Thanks to [Krxl-temp](https://github.com/krxl-temp) for the suggestion
+
 ## 📦 Modpack
 
 Feel free to include Auto GUI Scale in modpacks.
