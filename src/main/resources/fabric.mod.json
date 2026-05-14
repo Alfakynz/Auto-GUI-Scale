@@ -23,8 +23,8 @@
 		"auto-gui-scale.mixins.json"
 	],
 	"depends": {
-		"minecraft": ">=1.20",
-		"java": ">=17"
+		"minecraft": ">=${minecraft_version}",
+		"java": ">=25"
 	},
 	"suggests": {
 		"modmenu": "*",

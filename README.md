@@ -16,9 +16,9 @@ This mod changes the auto GUI value by reducing it by 1.
 
 ## 🔄 Versions
 
-- Minecraft  >= 1.20
-- Fabric >= 0.16.4
-- Quilt  >= 0.17.3
+- Minecraft >= 1.20
+- Fabric >= 0.16.4 / 0.18.4
+- Quilt >= 0.17.3
 
 # ⬇️ Installation
 

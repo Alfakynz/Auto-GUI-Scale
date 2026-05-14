@@ -25,7 +25,7 @@ public class ConfigScreen {
                 .setDefaultValue(true)
                 .setSaveConsumer(newValue -> {
                     Config.ENABLED = newValue;
-                    Minecraft.getInstance().resizeDisplay();
+                    Minecraft.getInstance().resizeGui();
                 })
                 .build()
         );

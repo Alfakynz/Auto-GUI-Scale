@@ -15,7 +15,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 public class GuiScaleMixin {
 
     @Inject(method = "calculateScale", at = @At("RETURN"), cancellable = true)
-    private void modifyAutoScale(int i, boolean bl, CallbackInfoReturnable<Integer> cir) {
+    private void modifyAutoScale(int maxScale, boolean enforceUnicode, CallbackInfoReturnable<Integer> cir) {
         if (!Config.ENABLED) return;
         Options options = Minecraft.getInstance().options;
         if (options.guiScale().get() == 0) {
