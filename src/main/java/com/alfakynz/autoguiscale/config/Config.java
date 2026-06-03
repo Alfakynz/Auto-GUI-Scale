@@ -14,6 +14,7 @@ public class Config {
     private static final Path CONFIG_PATH = Path.of("config", "auto-gui-scale.txt");
 
     public static boolean ENABLED = true;
+    public static int REDUCED = 1;
 
     public static void load() {
         if (!Files.exists(CONFIG_PATH)) {
@@ -30,8 +31,11 @@ public class Config {
 
                 if (line.startsWith("enabled=")) {
                     String value = line.substring("enabled=".length()).toLowerCase();
-
                     ENABLED = !value.equals("false");
+                }
+                else if (line.startsWith("reduced=")) {
+                    String value = line.substring("reduced=".length()).toLowerCase();
+                    REDUCED = Integer.parseInt(value);
                 }
             }
         } catch (IOException e) {
@@ -42,7 +46,9 @@ public class Config {
     public static void save() {
         try (Writer writer = new FileWriter(CONFIG_PATH.toString())) {
             String enabledString = Boolean.toString(ENABLED);
-            writer.write("enabled=" + enabledString + "\n\n");
+            String reducedString = Integer.toString(REDUCED);
+            writer.write("enabled=" + enabledString + "\n");
+            writer.write("reduced=" + reducedString + "\n");
         } catch (IOException e) {
             LOGGER.error("Failed to save Auto GUI Scale configuration.", e);
         }
@@ -54,6 +60,7 @@ public class Config {
             Files.writeString(CONFIG_PATH,
                     """
                          enabled=true
+                         reduced=1
                          """);
         } catch (IOException e) {
             LOGGER.error("Failed to create Auto GUI Scale configuration file.", e);
