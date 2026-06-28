@@ -15,6 +15,7 @@ public class Config {
 
     public static boolean ENABLED = true;
     public static int REDUCED = 1;
+    public static int MINIMUM = 2;
 
     public static void load() {
         if (!Files.exists(CONFIG_PATH)) {
@@ -37,6 +38,10 @@ public class Config {
                     String value = line.substring("reduced=".length()).toLowerCase();
                     REDUCED = Integer.parseInt(value);
                 }
+                else if (line.startsWith("minimum=")) {
+                    String value = line.substring("minimum=".length()).toLowerCase();
+                    MINIMUM = Integer.parseInt(value);
+                }
             }
         } catch (IOException e) {
             LOGGER.error("Failed to load Auto GUI Scale configuration.", e);
@@ -47,8 +52,10 @@ public class Config {
         try (Writer writer = new FileWriter(CONFIG_PATH.toString())) {
             String enabledString = Boolean.toString(ENABLED);
             String reducedString = Integer.toString(REDUCED);
+            String minimumString = Integer.toString(MINIMUM);
             writer.write("enabled=" + enabledString + "\n");
             writer.write("reduced=" + reducedString + "\n");
+            writer.write("minimum=" + minimumString + "\n");
         } catch (IOException e) {
             LOGGER.error("Failed to save Auto GUI Scale configuration.", e);
         }
@@ -61,6 +68,7 @@ public class Config {
                     """
                          enabled=true
                          reduced=1
+                         minimum=2
                          """);
         } catch (IOException e) {
             LOGGER.error("Failed to create Auto GUI Scale configuration file.", e);

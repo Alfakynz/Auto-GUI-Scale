@@ -12,7 +12,8 @@ This mod changes the auto GUI value by reducing it by 1.
 
 ## ✨ Features
 
-- Changes the auto GUI value by reducing it by 1.
+- Changes the auto GUI value by reducing it by 1 (configurable).
+- Adds a minimum GUI scale (2 by default)
 
 ## 🔄 Versions
 

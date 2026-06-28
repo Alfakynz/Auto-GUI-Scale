@@ -20,8 +20,8 @@ public class GuiScaleMixin {
         Options options = Minecraft.getInstance().options;
         if (options.guiScale().get() == 0) {
             int computedScale = cir.getReturnValue();
-            cir.setReturnValue(Math.max(1, computedScale - Config.REDUCED));
-            AutoGuiScale.LOGGER.info("Auto GUI Scale: Adjusted GUI scale from {} to {}", computedScale, cir.getReturnValue());
+            cir.setReturnValue(Math.max(Config.MINIMUM, computedScale - Config.REDUCED));
+            AutoGuiScale.LOGGER.info("Adjusted GUI scale from {} to {}", computedScale, cir.getReturnValue());
         }
     }
 }
