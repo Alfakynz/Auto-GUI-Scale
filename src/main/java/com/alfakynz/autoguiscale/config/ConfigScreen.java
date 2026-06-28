@@ -45,6 +45,21 @@ public class ConfigScreen {
                 .build()
         );
 
+        generalCategory.addEntry(entryBuilder
+                .startIntSlider(
+                        Component.translatable("option.auto_gui_scale.config.reduce"),
+                        Config.MINIMUM,
+                        0,
+                        4
+                )
+                .setDefaultValue(2)
+                .setSaveConsumer(newValue -> {
+                    Config.MINIMUM = newValue;
+                    Minecraft.getInstance().resizeDisplay();
+                })
+                .build()
+        );
+
         return builder.build();
     }
 }
