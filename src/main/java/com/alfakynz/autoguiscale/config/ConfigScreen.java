@@ -47,7 +47,7 @@ public class ConfigScreen {
 
         generalCategory.addEntry(entryBuilder
                 .startIntSlider(
-                        Component.translatable("option.auto_gui_scale.config.reduce"),
+                        Component.translatable("option.auto_gui_scale.config.minimum"),
                         Config.MINIMUM,
                         0,
                         4

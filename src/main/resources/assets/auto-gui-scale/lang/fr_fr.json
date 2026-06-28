@@ -3,6 +3,7 @@
   "option.auto_gui_scale.config.done": "Terminé",
   "option.auto_gui_scale.config.enable": "Activer",
   "option.auto_gui_scale.config.general": "Général",
+  "option.auto_gui_scale.config.minimum": "Minimum",
   "option.auto_gui_scale.config.reduce": "Réduire",
   "option.auto_gui_scale.config.no": "Non",
   "option.auto_gui_scale.config.yes": "Oui"
