@@ -31,6 +31,18 @@ public class ConfigScreen {
         );
 
         generalCategory.addEntry(entryBuilder
+                .startBooleanToggle(
+                        Component.translatable("option.auto_gui_scale.config.debug"),
+                        Config.DEBUG
+                )
+                .setDefaultValue(false)
+                .setSaveConsumer(newValue -> {
+                    Config.DEBUG = newValue;
+                })
+                .build()
+        );
+
+        generalCategory.addEntry(entryBuilder
                 .startIntSlider(
                         Component.translatable("option.auto_gui_scale.config.reduce"),
                         Config.REDUCED,
