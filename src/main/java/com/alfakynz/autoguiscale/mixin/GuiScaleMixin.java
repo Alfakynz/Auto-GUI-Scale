@@ -21,7 +21,7 @@ public class GuiScaleMixin {
         if (options.guiScale().get() == 0) {
             int computedScale = cir.getReturnValue();
             cir.setReturnValue(Math.max(Config.MINIMUM, computedScale - Config.REDUCED));
-            AutoGuiScale.LOGGER.info("Adjusted GUI scale from {} to {}", computedScale, cir.getReturnValue());
+            if (Config.DEBUG) AutoGuiScale.LOGGER.info("Adjusted GUI scale from {} to {}", computedScale, cir.getReturnValue());
         }
     }
 }
