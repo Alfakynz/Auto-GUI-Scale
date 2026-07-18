@@ -2,6 +2,7 @@
   "option.auto_gui_scale.config": "Options de Default Gamemode",
   "option.auto_gui_scale.config.done": "Terminé",
   "option.auto_gui_scale.config.enable": "Activer",
+  "option.auto_gui_scale.config.debug": "Déboguer",
   "option.auto_gui_scale.config.general": "Général",
   "option.auto_gui_scale.config.minimum": "Minimum",
   "option.auto_gui_scale.config.reduce": "Réduire",

@@ -14,6 +14,7 @@ public class Config {
     private static final Path CONFIG_PATH = Path.of("config", "auto-gui-scale.txt");
 
     public static boolean ENABLED = true;
+    public static boolean DEBUG = false;
     public static int REDUCED = 1;
     public static int MINIMUM = 2;
 
@@ -34,6 +35,10 @@ public class Config {
                     String value = line.substring("enabled=".length()).toLowerCase();
                     ENABLED = !value.equals("false");
                 }
+                else if (line.startsWith("debug=")) {
+                    String value = line.substring("debug=".length()).toLowerCase();
+                    DEBUG = !value.equals("false");
+                }
                 else if (line.startsWith("reduced=")) {
                     String value = line.substring("reduced=".length()).toLowerCase();
                     REDUCED = Integer.parseInt(value);
@@ -51,9 +56,11 @@ public class Config {
     public static void save() {
         try (Writer writer = new FileWriter(CONFIG_PATH.toString())) {
             String enabledString = Boolean.toString(ENABLED);
+            String debugString = Boolean.toString(DEBUG);
             String reducedString = Integer.toString(REDUCED);
             String minimumString = Integer.toString(MINIMUM);
             writer.write("enabled=" + enabledString + "\n");
+            writer.write("debug=" + debugString + "\n");
             writer.write("reduced=" + reducedString + "\n");
             writer.write("minimum=" + minimumString + "\n");
         } catch (IOException e) {
@@ -67,6 +74,7 @@ public class Config {
             Files.writeString(CONFIG_PATH,
                     """
                          enabled=true
+                         debug=false
                          reduced=1
                          minimum=2
                          """);
