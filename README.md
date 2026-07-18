@@ -42,6 +42,7 @@ Nothing for now, but feel free to suggest any feature you want!
 ## 🙏 Credits
 
 - Thanks to [Krxl-temp](https://github.com/krxl-temp) for the suggestion
+- Thanks to [Colbster937](https://github.com/colbster937) for the [PR](https://github.com/Alfakynz/Auto-GUI-Scale/pull/3)
 
 ## 📦 Modpack
 
