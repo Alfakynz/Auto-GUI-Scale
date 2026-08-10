@@ -1,6 +1,6 @@
 # 🔧 Auto GUI Scale
 
-This mod changes the auto GUI value by reducing it by 1.
+This mod changes the auto GUI value by dividing it by 1.5.
 
 [![fabric](https://cdn.jsdelivr.net/npm/@intergrav/devins-badges@3/assets/cozy/supported/fabric_64h.png)](https://fabricmc.net/)
 [![quilt](https://cdn.jsdelivr.net/npm/@intergrav/devins-badges@3/assets/cozy/supported/quilt_64h.png)](https://quiltmc.org/)
@@ -12,7 +12,8 @@ This mod changes the auto GUI value by reducing it by 1.
 
 ## ✨ Features
 
-- Changes the auto GUI value by reducing it by 1 (configurable).
+- Changes the auto GUI value by dividing it by 1.5 (configurable)
+- Reduces the GUI value (0 by default)
 - Adds a minimum GUI scale (2 by default)
 
 ## 🔄 Versions

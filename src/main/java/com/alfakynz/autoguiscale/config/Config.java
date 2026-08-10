@@ -15,6 +15,7 @@ public class Config {
 
     public static boolean ENABLED = true;
     public static boolean DEBUG = false;
+    public static double DIVIDED = 1.5;
     public static int REDUCED = 1;
     public static int MINIMUM = 2;
 
@@ -33,11 +34,15 @@ public class Config {
 
                 if (line.startsWith("enabled=")) {
                     String value = line.substring("enabled=".length()).toLowerCase();
-                    ENABLED = !value.equals("false");
+                    ENABLED = value.equals("true");
                 }
                 else if (line.startsWith("debug=")) {
                     String value = line.substring("debug=".length()).toLowerCase();
-                    DEBUG = !value.equals("false");
+                    DEBUG = value.equals("true");
+                }
+                else if (line.startsWith("divided=")) {
+                    String value = line.substring("divided=".length()).toLowerCase();
+                    DIVIDED = Double.parseDouble(value);
                 }
                 else if (line.startsWith("reduced=")) {
                     String value = line.substring("reduced=".length()).toLowerCase();
@@ -57,10 +62,12 @@ public class Config {
         try (Writer writer = new FileWriter(CONFIG_PATH.toString())) {
             String enabledString = Boolean.toString(ENABLED);
             String debugString = Boolean.toString(DEBUG);
+            String dividedString = Double.toString(DIVIDED);
             String reducedString = Integer.toString(REDUCED);
             String minimumString = Integer.toString(MINIMUM);
             writer.write("enabled=" + enabledString + "\n");
             writer.write("debug=" + debugString + "\n");
+            writer.write("divided=" + dividedString + "\n");
             writer.write("reduced=" + reducedString + "\n");
             writer.write("minimum=" + minimumString + "\n");
         } catch (IOException e) {
@@ -75,7 +82,8 @@ public class Config {
                     """
                          enabled=true
                          debug=false
-                         reduced=1
+                         divided=1.5
+                         reduced=0
                          minimum=2
                          """);
         } catch (IOException e) {
