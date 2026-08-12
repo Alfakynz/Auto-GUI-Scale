@@ -19,12 +19,12 @@ public class ConfigScreen {
 
         generalCategory.addEntry(entryBuilder
                 .startBooleanToggle(
-                        Component.translatable("option.auto_gui_scale.config.enable"),
-                        Config.ENABLED
+                        Component.translatable(Config.ENABLED.text),
+                        Config.ENABLED.value
                 )
                 .setDefaultValue(true)
                 .setSaveConsumer(newValue -> {
-                    Config.ENABLED = newValue;
+                    Config.ENABLED.value = newValue;
                     Minecraft.getInstance().resizeDisplay();
                 })
                 .build()
@@ -32,27 +32,27 @@ public class ConfigScreen {
 
         generalCategory.addEntry(entryBuilder
                 .startBooleanToggle(
-                        Component.translatable("option.auto_gui_scale.config.debug"),
-                        Config.DEBUG
+                        Component.translatable(Config.DEBUG.text),
+                        Config.DEBUG.value
                 )
                 .setDefaultValue(false)
                 .setSaveConsumer(newValue -> {
-                    Config.DEBUG = newValue;
+                    Config.DEBUG.value = newValue;
                 })
                 .build()
         );
 
         generalCategory.addEntry(entryBuilder
                 .startIntSlider(
-                        Component.translatable("option.auto_gui_scale.config.divide"),
-                        (int) Math.round(Config.DIVIDED * 10),
+                        Component.translatable(Config.DIVIDED.text),
+                        (int) Math.round(Config.DIVIDED.value * 10),
                         10,
                         50
                 )
                 .setDefaultValue(15)
                 .setTextGetter(value -> Component.literal(String.format("Value: %.1f", value / 10.0)))
                 .setSaveConsumer(newValue -> {
-                    Config.DIVIDED = newValue / 10.0;
+                    Config.DIVIDED.value = newValue / 10.0;
                     Minecraft.getInstance().resizeDisplay();
                 })
                 .build()
@@ -60,14 +60,14 @@ public class ConfigScreen {
 
         generalCategory.addEntry(entryBuilder
                 .startIntSlider(
-                        Component.translatable("option.auto_gui_scale.config.reduce"),
-                        Config.REDUCED,
+                        Component.translatable(Config.REDUCED.text),
+                        Config.REDUCED.value,
                         0,
                         5
                 )
                 .setDefaultValue(0)
                 .setSaveConsumer(newValue -> {
-                    Config.REDUCED = newValue;
+                    Config.REDUCED.value = newValue;
                     Minecraft.getInstance().resizeDisplay();
                 })
                 .build()
@@ -75,14 +75,14 @@ public class ConfigScreen {
 
         generalCategory.addEntry(entryBuilder
                 .startIntSlider(
-                        Component.translatable("option.auto_gui_scale.config.minimum"),
-                        Config.MINIMUM,
+                        Component.translatable(Config.MINIMUM.text),
+                        Config.MINIMUM.value,
                         1,
                         6
                 )
                 .setDefaultValue(2)
                 .setSaveConsumer(newValue -> {
-                    Config.MINIMUM = newValue;
+                    Config.MINIMUM.value = newValue;
                     Minecraft.getInstance().resizeDisplay();
                 })
                 .build()

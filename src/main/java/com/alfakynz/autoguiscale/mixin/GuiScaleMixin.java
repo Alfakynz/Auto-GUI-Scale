@@ -16,12 +16,12 @@ public class GuiScaleMixin {
 
     @Inject(method = "calculateScale", at = @At("RETURN"), cancellable = true)
     private void modifyAutoScale(int i, boolean bl, CallbackInfoReturnable<Integer> cir) {
-        if (!Config.ENABLED) return;
+        if (!Config.ENABLED.value) return;
         Options options = Minecraft.getInstance().options;
         if (options.guiScale().get() == 0) {
             int computedScale = cir.getReturnValue();
-            cir.setReturnValue((int) Math.max(Config.MINIMUM, computedScale / Config.DIVIDED) - Config.REDUCED);
-            if (Config.DEBUG) AutoGuiScale.LOGGER.info("Adjusted GUI scale from {} to {}", computedScale, cir.getReturnValue());
+            cir.setReturnValue((int) Math.max(Config.MINIMUM.value, computedScale / Config.DIVIDED.value) - Config.REDUCED.value);
+            if (Config.DEBUG.value) AutoGuiScale.LOGGER.info("Adjusted GUI scale from {} to {}", computedScale, cir.getReturnValue());
         }
     }
 }
