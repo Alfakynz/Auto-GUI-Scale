@@ -59,6 +59,18 @@ public class ConfigScreen {
         );
 
         generalCategory.addEntry(entryBuilder
+                .startBooleanToggle(
+                        Component.translatable(Config.ROUND.text),
+                        Config.ROUND.value
+                )
+                .setDefaultValue(true)
+                .setSaveConsumer(newValue -> {
+                    Config.ROUND.value = newValue;
+                })
+                .build()
+        );
+
+        generalCategory.addEntry(entryBuilder
                 .startIntSlider(
                         Component.translatable(Config.REDUCED.text),
                         Config.REDUCED.value,
