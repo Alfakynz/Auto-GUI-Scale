@@ -25,7 +25,7 @@ public class ConfigScreen {
                 .setDefaultValue(true)
                 .setSaveConsumer(newValue -> {
                     Config.ENABLED.value = newValue;
-                    Minecraft.getInstance().resizeGui();
+                    Minecraft.getInstance().resizeDisplay();
                 })
                 .build()
         );
@@ -53,7 +53,7 @@ public class ConfigScreen {
                 .setTextGetter(value -> Component.literal(String.format("Value: %.1f", value / 10.0)))
                 .setSaveConsumer(newValue -> {
                     Config.DIVIDED.value = newValue / 10.0;
-                    Minecraft.getInstance().resizeGui();
+                    Minecraft.getInstance().resizeDisplay();
                 })
                 .build()
         );
@@ -80,7 +80,7 @@ public class ConfigScreen {
                 .setDefaultValue(0)
                 .setSaveConsumer(newValue -> {
                     Config.REDUCED.value = newValue;
-                    Minecraft.getInstance().resizeGui();
+                    Minecraft.getInstance().resizeDisplay();
                 })
                 .build()
         );
@@ -95,7 +95,7 @@ public class ConfigScreen {
                 .setDefaultValue(2)
                 .setSaveConsumer(newValue -> {
                     Config.MINIMUM.value = newValue;
-                    Minecraft.getInstance().resizeGui();
+                    Minecraft.getInstance().resizeDisplay();
                 })
                 .build()
         );
