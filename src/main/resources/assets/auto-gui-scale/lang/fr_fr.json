@@ -5,6 +5,8 @@
   "option.auto_gui_scale.config.debug": "Déboguer",
   "option.auto_gui_scale.config.divide": "Diviser",
   "option.auto_gui_scale.config.round": "Arrondir la division",
+  "option.auto_gui_scale.config.round.standard": "Standard",
+  "option.auto_gui_scale.config.round.up": "Plus",
   "option.auto_gui_scale.config.general": "Général",
   "option.auto_gui_scale.config.minimum": "Minimum",
   "option.auto_gui_scale.config.reduce": "Réduire",
