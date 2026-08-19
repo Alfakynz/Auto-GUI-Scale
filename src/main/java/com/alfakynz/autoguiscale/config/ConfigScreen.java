@@ -11,7 +11,10 @@ public class ConfigScreen {
         ConfigBuilder builder = ConfigBuilder.create()
                 .setParentScreen(parent)
                 .setTitle(Component.translatable("option.auto_gui_scale.config"))
-                .setSavingRunnable(Config::save);
+                .setSavingRunnable(() -> {
+                    Config.save();
+                    Minecraft.getInstance().resizeDisplay();
+                });
 
         ConfigEntryBuilder entryBuilder = builder.entryBuilder();
 
@@ -23,10 +26,7 @@ public class ConfigScreen {
                         Config.ENABLED.value
                 )
                 .setDefaultValue(true)
-                .setSaveConsumer(newValue -> {
-                    Config.ENABLED.value = newValue;
-                    Minecraft.getInstance().resizeDisplay();
-                })
+                .setSaveConsumer(newValue -> Config.ENABLED.value = newValue)
                 .build()
         );
 
@@ -36,9 +36,7 @@ public class ConfigScreen {
                         Config.DEBUG.value
                 )
                 .setDefaultValue(false)
-                .setSaveConsumer(newValue -> {
-                    Config.DEBUG.value = newValue;
-                })
+                .setSaveConsumer(newValue -> Config.DEBUG.value = newValue)
                 .build()
         );
 
@@ -51,10 +49,7 @@ public class ConfigScreen {
                 )
                 .setDefaultValue(15)
                 .setTextGetter(value -> Component.literal(String.format("Value: %.1f", value / 10.0)))
-                .setSaveConsumer(newValue -> {
-                    Config.DIVIDED.value = newValue / 10.0;
-                    Minecraft.getInstance().resizeDisplay();
-                })
+                .setSaveConsumer(newValue -> Config.DIVIDED.value = newValue / 10.0)
                 .build()
         );
 
@@ -64,9 +59,7 @@ public class ConfigScreen {
                         Config.ROUND.value
                 )
                 .setDefaultValue(true)
-                .setSaveConsumer(newValue -> {
-                    Config.ROUND.value = newValue;
-                })
+                .setSaveConsumer(newValue -> Config.ROUND.value = newValue)
                 .build()
         );
 
@@ -78,10 +71,7 @@ public class ConfigScreen {
                         5
                 )
                 .setDefaultValue(0)
-                .setSaveConsumer(newValue -> {
-                    Config.REDUCED.value = newValue;
-                    Minecraft.getInstance().resizeDisplay();
-                })
+                .setSaveConsumer(newValue -> Config.REDUCED.value = newValue)
                 .build()
         );
 
@@ -93,10 +83,7 @@ public class ConfigScreen {
                         6
                 )
                 .setDefaultValue(2)
-                .setSaveConsumer(newValue -> {
-                    Config.MINIMUM.value = newValue;
-                    Minecraft.getInstance().resizeDisplay();
-                })
+                .setSaveConsumer(newValue -> Config.MINIMUM.value = newValue)
                 .build()
         );
 
