@@ -69,9 +69,7 @@ public class ConfigScreen {
                         Config.ROUND.value
                 )
                 .setDefaultValue(true)
-                .setSaveConsumer(newValue -> {
-                    Config.ROUND.value = newValue;
-                })
+                .setSaveConsumer(newValue -> Config.ROUND.value = newValue)
                 .build()
         );
 
