@@ -21,9 +21,10 @@ public class Config {
     public static ConfigItem<Boolean> ENABLED = new ConfigItemBool("enabled","option.auto_gui_scale.config.enable", true);
     public static ConfigItem<Boolean> DEBUG = new ConfigItemBool("debug", "option.auto_gui_scale.config.debug", false);
     public static ConfigItem<Double> DIVIDED = new ConfigItemDouble("divided", "option.auto_gui_scale.config.divide", 1.5, 1.0, 5.0);
+    public static ConfigItem<Boolean> ROUND = new ConfigItemBool("round", "option.auto_gui_scale.config.round", true);
     public static ConfigItem<Integer> REDUCED = new ConfigItemInt("reduced", "option.auto_gui_scale.config.reduce", 0, 0, 5);
     public static ConfigItem<Integer> MINIMUM = new ConfigItemInt("minimum", "option.auto_gui_scale.config.minimum", 2, 1, 6);
-    public static List<ConfigItem<?>> configItems = List.of(ENABLED, DEBUG, DIVIDED, REDUCED, MINIMUM);
+    public static List<ConfigItem<?>> configItems = List.of(ENABLED, DEBUG, DIVIDED, ROUND, REDUCED, MINIMUM);
 
     public static void load() {
         if (!Files.exists(CONFIG_PATH)) {
