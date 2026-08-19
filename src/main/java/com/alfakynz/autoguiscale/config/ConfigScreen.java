@@ -59,6 +59,9 @@ public class ConfigScreen {
                         Config.ROUND.value
                 )
                 .setDefaultValue(true)
+                .setYesNoTextSupplier(value -> value
+                        ? Component.translatable("option.auto_gui_scale.config.round.standard")
+                        : Component.translatable("option.auto_gui_scale.config.round.up"))
                 .setSaveConsumer(newValue -> Config.ROUND.value = newValue)
                 .build()
         );
